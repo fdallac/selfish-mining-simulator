@@ -64,16 +64,17 @@ def simu_and_plot_attacks():
     mean_rew_series = [(sum_rew_series[i] / n_simu) for i in range(len(sum_rew_series))]
     mean_diff_series = [(sum_diff_series[i] / n_simu) for i in range(len(sum_diff_series))]
     # update plot data
-    source1.data = dict(x=[[t/(3600*24) for t in t_v] for t_v in time_vect_series], y=rew_vect_series)
-    source1_1.data = dict(x=[t/(3600*24) for t in time_scale], y=mean_rew_series)
-    source1_2.data = dict(x=[0, T/(3600*24)], y=[bitcoin_reward*bitcoin_value*q/600]*2)
+    source1.data = dict(x=[[t/(3600*24) for t in t_v] for t_v in time_vect_series],
+        y=[[r*600 for r in rv] for rv in rew_vect_series])
+    source1_1.data = dict(x=[t/(3600*24) for t in time_scale], y=[m*600 for m in mean_rew_series])
+    source1_2.data = dict(x=[0, T/(3600*24)], y=[bitcoin_reward*bitcoin_value*q]*2)
     source2.data = dict(x=[[t/(3600*24) for t in t_v] for t_v in time_vect_series], y=diff_vect_series)
     source2_1.data = dict(x=[t/(3600*24) for t in time_scale], y=mean_diff_series)
     hist3, edges3 = np.histogram(win_t_series, density=True, bins=50)
     source3.data = dict(top=hist3, left=edges3[:-1], right=edges3[1:])
     hist4, edges4 = np.histogram(orphans_series, density=True, bins=50)
     source4.data = dict(top=hist4, left=edges4[:-1], right=edges4[1:])
-    honest_line.location = bitcoin_reward*bitcoin_value*q/600
+    honest_line.location = bitcoin_reward*bitcoin_value*q
     winday_line.location = np.mean(win_t_series)
     orphan_line.location = np.mean(orphans_series)
 
@@ -97,7 +98,7 @@ n_simu = 50 # number of simulations
 
 # constant params
 bitcoin_value = 1 # coinbase
-bitcoin_reward = 12.5 # n of bitcoin for each block mined
+bitcoin_reward = 1 # n of bitcoin for each block mined
 D = 1 # give-up gap (default)
 
 # time params
@@ -160,7 +161,7 @@ simu_and_plot_attacks()
 # setup plots
 label_font_size = '8pt'
 p1 = figure(toolbar_location=None, title='Attack reward', width=500, height=300)
-p1.xaxis.axis_label, p1.yaxis.axis_label = 'Time horizon [day]', 'Reward [coinbase/time]'
+p1.xaxis.axis_label, p1.yaxis.axis_label = 'Time horizon [day]', 'Reward [coinbase/time*600]'
 p1.xaxis.axis_label_text_font_style, p1.yaxis.axis_label_text_font_style = 'normal', 'normal'
 p1.xaxis.axis_label_text_font_size, p1.yaxis.axis_label_text_font_size = label_font_size, label_font_size
 p1.multi_line('x', 'y', source=source1, line_color='black', alpha=0.1)
