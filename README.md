@@ -13,8 +13,8 @@ Simulator interface shows:
 
 Control variables are:
 - **attacker hashrate**, i.e. attacker computational mining power over the total of all the miners;
-- **attacker connection rate**, i.e. percentage of the blockchain the attacker has an advantage while release his branch
-- **time horizon**, i.e. amount of days simulations are performed on
+- **attacker connection rate**, i.e. percentage of the blockchain the attacker has an advantage while release his branch;
+- **time horizon**, i.e. amount of days simulations are performed on;
 - **no. of simulation**, i.e. quantity of reproduced single attacks (notice that low values, as 50, 100 or 200, are enough to obtain a good simulations, higher values are usefull to better visualize probability distributions).
 
 
@@ -29,8 +29,8 @@ By Command Window:
 
 # Possible improvements
 - fix bugs on average line in 'starting winning day' plot;
-- show variance values of distributions
-- build online version of simulator interface
+- show variance values of distributions;
+- build online version of simulator interface.
 
 # Resources
 Grunspan C. and Perez R. "On Profitability of Selfish Mining \
