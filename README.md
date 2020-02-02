@@ -8,6 +8,4 @@ By Command Window:
 > bokeh serve --show simu_guy.py
 
 # Preview
-![PREVIEW](https://i.ibb.co/jyGN2Lw/preview.png)
-
-
+![PREVIEW](https://i.ibb.co/L1C8QTQ/prev.png)
