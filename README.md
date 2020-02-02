@@ -10,7 +10,7 @@ Simulator interface shows:
 - **difficulty adjustment over time**, where 1 is the initial difficulty level;
 - **distribution of the starting winning day**, i.e. how many days attacker needs to wait before his strategy starts to be more profitable than honest mining (*warning:* average value is more undestimated as more simulations lie under the honest reward level, and the attacker never starts to have an advantage - I will fix this bug as soon as possible);
 - **distribution of orphan blocks**, i.e. honestly mined blocks that end up to be invalidated after the release of the attacker branch. 
-\
+
 Control variable are:
 - **attacker hashrate**, i.e. attacker computational mining power over the total of all the miners;
 - **attacker connection rate**, i.e. percentage of the blockchain the attacker has an advantage while release his branch
