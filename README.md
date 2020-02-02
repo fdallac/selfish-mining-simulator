@@ -11,7 +11,7 @@ Simulator interface shows:
 - **distribution of the starting winning day**, i.e. how many days attacker needs to wait before his strategy starts to be more profitable than honest mining (*warning:* average value is more undestimated as more simulations lie under the honest reward level, and the attacker never starts to have an advantage - I will fix this bug as soon as possible);
 - **distribution of orphan blocks**, i.e. honestly mined blocks that end up to be invalidated after the release of the attacker branch. 
 
-Control variable are:
+Control variables are:
 - **attacker hashrate**, i.e. attacker computational mining power over the total of all the miners;
 - **attacker connection rate**, i.e. percentage of the blockchain the attacker has an advantage while release his branch
 - **time horizon**, i.e. amount of days simulations are performed on
@@ -33,5 +33,5 @@ By Command Window:
 - build online version of simulator interface
 
 # Resources
-Grunspan C., Perez R. "On Profitability of Selfish Mining \
+Grunspan C. and Perez R. "On Profitability of Selfish Mining \
 *https://webusers.imj-prg.fr/~ricardo.perez-marco/publications/articles/OnSelfishMining20.pdf*
