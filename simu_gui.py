@@ -138,7 +138,7 @@ t_slider = Slider(title='Time horizon (days)',
                 width=390)
 s_slider = Slider(title='Number of simulations',
                 value=50,
-                start=100,
+                start=50,
                 end=2000,
                 step=50,
                 width=390)
@@ -197,8 +197,8 @@ s_slider.on_change('value_throttled', update_input)
 txt = Div(text='''<a style="font-size:18px"><b>SELFISH MINING SIMULATOR</b></a><br>
     <p style="font-size:12px">Author: <a href='https://www.linkedin.com/in/filippodallachiara/' target='_blank'>
     Dalla Chiara Filippo</a><br><br>
-    This is a simulator of profitability of selfish mining attack against Bitcoin blockchain, built as project for
-    Dr Dr. Grunspan Cyril's course "Cryptocurrencies" at ESILV.<br>
+    This is a simulator of profitability of selfish mining attack against Bitcoin blockchain, built as project for 
+    Dr. Grunspan Cyril's course "Cryptocurrencies" at ESILV.<br>
     Plots show data of <a style="color:red">simulated selfish mining attack</a> as average of a settable single 
     simulations, against <a style="color:green">theoretical honest strategy</a>.<br><br>
     Selfish mining is a deviant mining strategy, where a major mining operator withholds mined blocks and releases them 
