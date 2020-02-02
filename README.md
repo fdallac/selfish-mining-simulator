@@ -25,7 +25,7 @@ By Command Window:
 > bokeh serve --show simu_guy.py
 
 # Preview
-![PREVIEW](https://i.ibb.co/L1C8QTQ/prev.png)
+<img src="https://i.ibb.co/L1C8QTQ/prev.png" width="700">
 
 # Possible improvements
 - fix bugs on average line in 'starting winning day' plot;
